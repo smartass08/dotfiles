@@ -1,9 +1,10 @@
 {
   system.defaults = {
     NSGlobalDomain = {
-      ApplePressAndHoldEnabled = false;
-      InitialKeyRepeat = 10;
-      KeyRepeat = 1;
+      # Controls text-caret movement when holding arrow keys. Keep the initial
+      # delay moderate so normal typing does not accidentally repeat keys.
+      InitialKeyRepeat = 15;
+      KeyRepeat = 2;
     };
   };
 }

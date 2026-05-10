@@ -27,7 +27,7 @@ The flake pins `nixpkgs` to `nixpkgs-unstable`, and nix-darwin publishes that sa
 - System: `aarch64-darwin`
 - Zsh login shell with Powerlevel10k
 - iTerm2 dynamic profile using the Powerlevel10k MesloLGS NF font
-- macOS key repeat defaults, including `KeyRepeat = 1`
+- macOS key repeat tuned for faster text-caret movement
 - Shared CLI tools and aliases through Home Manager
 - Darwin host settings for shell, fonts, defaults, and app/profile links
 - Homebrew casks for GUI apps
@@ -65,6 +65,7 @@ If another GUI app is added later, prefer adding it to `modules/darwin/homebrew.
 ```sh
 ./scripts/check.sh
 ./scripts/switch.sh
+defaults read NSGlobalDomain InitialKeyRepeat
 defaults read NSGlobalDomain KeyRepeat
 test -w ~/.p10k.zsh && p10k help >/dev/null
 zsh -ic 'alias cat; alias batch; command -v bat aria2c rclone claude git nh nom ssh code zed'

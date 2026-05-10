@@ -13,6 +13,7 @@
     casks = [
       # GUI apps live in Homebrew to avoid local source builds and App Management friction.
       "discord"
+      "geekbench"
       "iterm2"
       "microsoft-outlook"
       "spotify"

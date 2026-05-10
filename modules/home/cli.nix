@@ -11,6 +11,7 @@
     fastfetch
     git
     jq
+    nano
     nh
     nix-output-monitor
     nixfmt
@@ -24,6 +25,11 @@
     unzip
     zip
   ];
+
+  home.sessionVariables = {
+    EDITOR = "nano";
+    VISUAL = "nano";
+  };
 
   home.shellAliases = {
     batch = "aria2c --conditional-get true --continue true --auto-file-renaming=false --input-file";

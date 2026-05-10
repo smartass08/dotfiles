@@ -10,7 +10,8 @@ nix_setup_load_homebrew
 
 echo "host: $(hostname -s)"
 echo "flake: ${NIX_SETUP_HOST}"
-defaults read NSGlobalDomain KeyRepeat | sed 's/^/KeyRepeat: /'
+defaults read NSGlobalDomain InitialKeyRepeat 2>/dev/null | sed 's/^/InitialKeyRepeat: /'
+defaults read NSGlobalDomain KeyRepeat 2>/dev/null | sed 's/^/KeyRepeat: /'
 test -w "${HOME}/.p10k.zsh" && echo "p10k: writable"
 
 for command_name in aria2c bat claude git jq nh nom rclone rg ssh zsh; do

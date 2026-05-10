@@ -37,8 +37,8 @@ in
         [[ -r "$p10k_instant_prompt" ]] && source "$p10k_instant_prompt"
       '')
       (lib.mkOrder 1000 ''
-        export EDITOR="code --wait"
-        export VISUAL="$EDITOR"
+        export EDITOR="${config.home.sessionVariables.EDITOR}"
+        export VISUAL="${config.home.sessionVariables.VISUAL}"
         export PAGER="less -R"
 
         source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
