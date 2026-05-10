@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# direnv/local shells
+.direnv/
+.env
+.env.*
+!.env.example
+
+# Nix build outputs
+result
+result-*
+
+# Editor/project-local noise
+.vscode/
+.zed/
+.idea/
+*.swp
+*.swo
