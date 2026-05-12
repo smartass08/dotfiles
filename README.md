@@ -107,6 +107,7 @@ Current Darwin app flags:
 - `my.apps.discord.enable`
 - `my.apps.geekbench.enable`
 - `my.apps.iterm2.enable`
+- `my.apps.nvidia-geforce-now.enable`
 - `my.apps.outlook.enable`
 - `my.apps.spotify.enable`
 - `my.apps.telegram.enable`

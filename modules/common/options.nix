@@ -5,6 +5,7 @@
       discord.enable = lib.mkEnableOption "Discord";
       geekbench.enable = lib.mkEnableOption "Geekbench";
       iterm2.enable = lib.mkEnableOption "iTerm2";
+      nvidia-geforce-now.enable = lib.mkEnableOption "NVIDIA GeForce NOW";
       outlook.enable = lib.mkEnableOption "Microsoft Outlook";
       spotify.enable = lib.mkEnableOption "Spotify";
       telegram.enable = lib.mkEnableOption "Telegram";

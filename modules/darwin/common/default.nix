@@ -15,6 +15,7 @@
     discord.enable = lib.mkDefault true;
     geekbench.enable = lib.mkDefault true;
     iterm2.enable = lib.mkDefault true;
+    nvidia-geforce-now.enable = lib.mkDefault true;
     outlook.enable = lib.mkDefault true;
     spotify.enable = lib.mkDefault true;
     telegram.enable = lib.mkDefault true;

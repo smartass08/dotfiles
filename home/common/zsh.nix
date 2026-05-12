@@ -22,6 +22,22 @@ in
     };
     syntaxHighlighting.enable = true;
 
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "git"
+        "sudo"
+      ];
+      theme = "";
+      custom = "${config.home.homeDirectory}/.oh-my-zsh-custom";
+      extraConfig = ''
+        ZSH="${pkgs.oh-my-zsh}/share/oh-my-zsh"
+        ZSH_CACHE_DIR="${config.xdg.cacheHome}/oh-my-zsh"
+        DISABLE_AUTO_UPDATE="true"
+        zstyle ':omz:update' mode disabled
+      '';
+    };
+
     history = {
       path = "$HOME/.zsh_history";
       save = 100000;
@@ -73,5 +89,10 @@ in
     elif [ ! -w "$p10k_config" ]; then
       /bin/chmod u+w "$p10k_config" || true
     fi
+  '';
+
+  home.activation.ensureWritableOhMyZshCustom = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+    omz_custom="${config.home.homeDirectory}/.oh-my-zsh-custom"
+    /bin/mkdir -p "$omz_custom/plugins" "$omz_custom/themes"
   '';
 }
