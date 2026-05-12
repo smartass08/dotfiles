@@ -7,5 +7,5 @@ set -euo pipefail
 cd "${NIX_SETUP_ROOT}"
 nix_setup_require_nix
 
-nix flake check
+nix flake check --all-systems
 nix_setup_darwin_rebuild build

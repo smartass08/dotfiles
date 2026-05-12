@@ -2,7 +2,8 @@
 # Shared helpers for repository scripts. Source this file from bash scripts.
 
 NIX_SETUP_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
-NIX_SETUP_HOST="${NIX_SETUP_HOST:-deathbox-air}"
+NIX_SETUP_DEFAULT_HOST="$(hostname -s 2>/dev/null || true)"
+NIX_SETUP_HOST="${NIX_SETUP_HOST:-${NIX_SETUP_DEFAULT_HOST:-deathbox-air}}"
 
 nix_setup_load_nix() {
   if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then

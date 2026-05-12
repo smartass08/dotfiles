@@ -62,7 +62,7 @@ else
   nix flake update "${flake_inputs[@]}"
 fi
 
-nix flake check
+nix flake check --all-systems
 
 if [ "${do_build}" -eq 1 ]; then
   nix_setup_darwin_rebuild build

@@ -4,6 +4,11 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
     darwin = {
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,51 +22,49 @@
 
   outputs =
     inputs@{
-      self,
-      nixpkgs,
+      flake-parts,
       darwin,
-      home-manager,
       ...
     }:
-    let
-      system = "aarch64-darwin";
-      username = "smartass08";
-      hostname = "deathbox-air";
-      specialArgs = {
-        inherit
-          inputs
-          username
-          hostname
-          ;
-      };
-    in
-    {
-      darwinConfigurations.${hostname} = darwin.lib.darwinSystem {
-        inherit system specialArgs;
-        modules = [
-          ./hosts/darwin/deathbox-air
-          home-manager.darwinModules.home-manager
-          {
-            nixpkgs = {
-              hostPlatform = system;
-              config.allowUnfree = true;
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "aarch64-darwin"
+        "aarch64-linux"
+        "x86_64-linux"
+      ];
+
+      flake =
+        let
+          hostLib = import ./lib/hosts.nix { inherit inputs; };
+        in
+        {
+          inherit (hostLib) darwinConfigurations nixosConfigurations;
+          lib = {
+            inherit (hostLib)
+              darwinHosts
+              mkDarwinHost
+              mkNixosHost
+              nixosHosts
+              ;
+          };
+        };
+
+      perSystem =
+        {
+          lib,
+          pkgs,
+          system,
+          ...
+        }:
+        {
+          apps = lib.optionalAttrs pkgs.stdenv.isDarwin {
+            darwin-rebuild = {
+              type = "app";
+              program = "${darwin.packages.${system}.darwin-rebuild}/bin/darwin-rebuild";
             };
+          };
 
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              extraSpecialArgs = specialArgs;
-              users.${username} = import ./home/smartass08.nix;
-            };
-          }
-        ];
-      };
-
-      apps.${system}.darwin-rebuild = {
-        type = "app";
-        program = "${darwin.packages.${system}.darwin-rebuild}/bin/darwin-rebuild";
-      };
-
-      formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt;
+          formatter = pkgs.nixfmt;
+        };
     };
 }

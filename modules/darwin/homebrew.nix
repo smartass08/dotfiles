@@ -10,17 +10,6 @@
     caskArgs = {
       appdir = "/Applications";
     };
-    casks = [
-      # GUI apps live in Homebrew to avoid local source builds and App Management friction.
-      "discord"
-      "geekbench"
-      "iterm2"
-      "microsoft-outlook"
-      "spotify"
-      "telegram"
-      "visual-studio-code"
-      "zed"
-    ];
     onActivation = {
       autoUpdate = false;
       cleanup = "none";

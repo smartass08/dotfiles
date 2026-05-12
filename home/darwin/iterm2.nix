@@ -1,14 +1,14 @@
-{ lib, ... }:
+{ hostname, lib, ... }:
 let
-  profileGuid = "deathbox-air-nix-profile";
+  profileGuid = "${hostname}-nix-profile";
 in
 {
-  home.file."Library/Application Support/iTerm2/DynamicProfiles/deathbox-air.json".text =
+  home.file."Library/Application Support/iTerm2/DynamicProfiles/${hostname}.json".text =
     builtins.toJSON
       {
         Profiles = [
           {
-            Name = "deathbox-air";
+            Name = hostname;
             Guid = profileGuid;
             "Custom Command" = "No";
             "Normal Font" = "MesloLGS-NF-Regular 13";

@@ -14,12 +14,15 @@ defaults read NSGlobalDomain InitialKeyRepeat 2>/dev/null | sed 's/^/InitialKeyR
 defaults read NSGlobalDomain KeyRepeat 2>/dev/null | sed 's/^/KeyRepeat: /'
 test -w "${HOME}/.p10k.zsh" && echo "p10k: writable"
 
-for command_name in aria2c bat claude git jq nh nom rclone rg ssh zsh; do
+for command_name in aria2c bat cargo claude git go jq nh node nom npm npx pip pip3 python python3 rclone rg rust-analyzer rustc rustfmt ssh virtualenv zsh; do
   command -v "${command_name}"
 done
 
 if command -v brew >/dev/null 2>&1; then
-  brew list --cask --versions discord iterm2 microsoft-outlook spotify telegram visual-studio-code zed
+  mapfile -t casks < <(nix eval --json ".#darwinConfigurations.${NIX_SETUP_HOST}.config.homebrew.casks" | jq -r '.[] | if type == "string" then . else .name end')
+  if [ "${#casks[@]}" -gt 0 ]; then
+    brew list --cask --versions "${casks[@]}"
+  fi
 else
   echo "brew: not found" >&2
 fi
