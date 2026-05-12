@@ -41,6 +41,12 @@ in
         export VISUAL="${config.home.sessionVariables.VISUAL}"
         export PAGER="less -R"
 
+        if [[ -r "$HOME/.1p-env" ]]; then
+          set -o allexport
+          source "$HOME/.1p-env"
+          set +o allexport
+        fi
+
         source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
         [[ -r "$HOME/.p10k.zsh" ]] && source "$HOME/.p10k.zsh"
 

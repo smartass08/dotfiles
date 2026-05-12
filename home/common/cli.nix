@@ -34,6 +34,8 @@ in
     ++ lib.optionals toolsets.dev.enable [
       cargo
       claude-code
+      opencode
+      codex
       go
       nodejs_latest
       python3
