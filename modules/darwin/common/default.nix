@@ -19,6 +19,7 @@
     outlook.enable = lib.mkDefault true;
     spotify.enable = lib.mkDefault true;
     telegram.enable = lib.mkDefault true;
+    whatsapp.enable = lib.mkDefault true;
     vscode.enable = lib.mkDefault true;
     zed.enable = lib.mkDefault true;
   };

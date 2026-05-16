@@ -9,6 +9,7 @@
       outlook.enable = lib.mkEnableOption "Microsoft Outlook";
       spotify.enable = lib.mkEnableOption "Spotify";
       telegram.enable = lib.mkEnableOption "Telegram";
+      whatsapp.enable = lib.mkEnableOption "WhatsApp";
       vscode.enable = lib.mkEnableOption "Visual Studio Code";
       zed.enable = lib.mkEnableOption "Zed editor";
     };

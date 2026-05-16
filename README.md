@@ -111,6 +111,7 @@ Current Darwin app flags:
 - `my.apps.outlook.enable`
 - `my.apps.spotify.enable`
 - `my.apps.telegram.enable`
+- `my.apps.whatsapp.enable`
 - `my.apps.vscode.enable`
 - `my.apps.zed.enable`
 
