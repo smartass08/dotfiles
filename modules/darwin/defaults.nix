@@ -17,6 +17,8 @@
 
     dock = {
       autohide = true;
+      magnification = true;
+      largesize = 72;
       tilesize = 45;
     };
   };
