@@ -38,7 +38,7 @@ in
       # Enables tap-to-click in the global domain, including places that do not
       # read the per-device trackpad defaults.
       "com.apple.mouse.tapBehavior" = 1;
-      "com.apple.trackpad.forceClick" = 1;
+      "com.apple.trackpad.forceClick" = true;
     };
 
     trackpad = {
