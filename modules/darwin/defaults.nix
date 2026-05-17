@@ -2,16 +2,16 @@
 let
   currentHostTrackpadDefaults = {
     "com.apple.mouse.tapBehavior" = 1;
-    "com.apple.trackpad.enableSecondaryClick" = 1;
+    "com.apple.trackpad.enableSecondaryClick" = true;
     "com.apple.trackpad.fiveFingerPinchSwipeGesture" = 2;
     "com.apple.trackpad.fourFingerHorizSwipeGesture" = 2;
     "com.apple.trackpad.fourFingerPinchSwipeGesture" = 2;
     "com.apple.trackpad.fourFingerVertSwipeGesture" = 2;
-    "com.apple.trackpad.momentumScroll" = 1;
-    "com.apple.trackpad.pinchGesture" = 1;
-    "com.apple.trackpad.rotateGesture" = 1;
+    "com.apple.trackpad.momentumScroll" = true;
+    "com.apple.trackpad.pinchGesture" = true;
+    "com.apple.trackpad.rotateGesture" = true;
     "com.apple.trackpad.scrollBehavior" = 2;
-    "com.apple.trackpad.threeFingerDragGesture" = 0;
+    "com.apple.trackpad.threeFingerDragGesture" = false;
     "com.apple.trackpad.threeFingerHorizSwipeGesture" = 2;
     "com.apple.trackpad.threeFingerTapGesture" = 0;
     "com.apple.trackpad.threeFingerVertSwipeGesture" = 2;
@@ -24,7 +24,10 @@ let
     lib.concatStringsSep "\n"
       (lib.mapAttrsToList (
         key: value:
-        "as_user defaults -currentHost write NSGlobalDomain ${lib.escapeShellArg key} -int ${toString value}"
+        if builtins.isBool value then
+          "as_user defaults -currentHost write NSGlobalDomain ${lib.escapeShellArg key} -bool ${lib.boolToString value}"
+        else
+          "as_user defaults -currentHost write NSGlobalDomain ${lib.escapeShellArg key} -int ${toString value}"
       ) currentHostTrackpadDefaults);
 in
 {
