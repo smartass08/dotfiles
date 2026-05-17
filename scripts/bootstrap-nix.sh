@@ -14,12 +14,12 @@ fi
 nix_setup_load_nix
 
 if ! command -v nix >/dev/null 2>&1; then
-  curl -sSf -L https://install.lix.systems/lix | sh -s -- install --no-confirm
+  curl --proto '=https' --tlsv1.2 -sSf -L https://nixos.org/nix/install | sh -s -- --daemon
   nix_setup_load_nix
 fi
 
 if ! command -v nix >/dev/null 2>&1; then
-  echo "nix is still not available after the Lix installer finished." >&2
+  echo "nix is still not available after the Nix installer finished." >&2
   exit 1
 fi
 

@@ -58,10 +58,10 @@ scripts/                          bootstrap, check, switch, update, cleanup, doc
 On a fresh macOS host:
 
 ```sh
-./scripts/bootstrap-lix.sh
+./scripts/bootstrap-nix.sh
 ```
 
-The bootstrap script installs Lix when `nix` is missing, installs Homebrew when
+The bootstrap script installs multi-user Nix when `nix` is missing, installs Homebrew when
 `brew` is missing, locks the flake, and switches the active host.
 
 After bootstrap:

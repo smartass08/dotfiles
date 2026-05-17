@@ -42,7 +42,7 @@ nix_setup_require_nix() {
   nix_setup_load_nix
 
   if ! command -v nix >/dev/null 2>&1; then
-    echo "nix is not available. Run ./scripts/bootstrap-lix.sh first." >&2
+    echo "nix is not available. Run ./scripts/bootstrap-nix.sh first." >&2
     exit 1
   fi
 }
