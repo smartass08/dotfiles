@@ -1,3 +1,4 @@
+{ lib, username, ... }:
 {
   system.defaults = {
     NSGlobalDomain = {
@@ -22,4 +23,11 @@
       tilesize = 45;
     };
   };
+
+  system.activationScripts.postActivation.text = lib.mkAfter ''
+    echo >&2 "current-host trackpad defaults..."
+    user=${lib.escapeShellArg username}
+    launchctl asuser "$(id -u -- "$user")" sudo --user="$user" -- \
+      defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+  '';
 }
