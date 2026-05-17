@@ -1,4 +1,7 @@
 { ... }:
 {
-  my.apps.telegram.enable = false;
+  my.apps = {
+    nvidia-geforce-now.enable = false;
+    telegram.enable = false;
+  };
 }
