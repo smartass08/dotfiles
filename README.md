@@ -30,6 +30,7 @@ Darwin hosts are declared in [lib/hosts.nix](./lib/hosts.nix):
 
 - `deathbox-air`: current MacBook Air
 - `deathbox-mini`: personal Mac mini; inherits common Darwin apps
+- `shbam-work`: work MacBook; inherits common Darwin apps but disables social apps
 - `work-macbook`: work MacBook; inherits common Darwin apps but disables Telegram
 
 NixOS support is scaffolded with `mkNixosHost` and
@@ -74,6 +75,7 @@ Scripts default to `hostname -s`. Override when checking another host:
 
 ```sh
 NIX_SETUP_HOST=deathbox-mini ./scripts/check.sh
+NIX_SETUP_HOST=shbam-work ./scripts/check.sh
 NIX_SETUP_HOST=work-macbook ./scripts/check.sh
 ```
 
@@ -82,7 +84,7 @@ NIX_SETUP_HOST=work-macbook ./scripts/check.sh
 - Zsh login shell with Powerlevel10k
 - Writable `~/.p10k.zsh` seeded from [home/common/p10k.zsh](./home/common/p10k.zsh)
 - iTerm2 dynamic profile using the Powerlevel10k MesloLGS NF font
-- macOS text-caret repeat settings
+- macOS text-caret repeat and tap-to-click trackpad settings
 - Shared CLI tools and aliases
 - Python, Node.js, Go, and Rust/Cargo toolchains from Nix
 - Darwin defaults, fonts, Nix daemon settings, and Homebrew casks
@@ -104,6 +106,7 @@ That pattern is used by [hosts/darwin/work-macbook/default.nix](./hosts/darwin/w
 
 Current Darwin app flags:
 
+- `my.apps.codexbar.enable`
 - `my.apps.discord.enable`
 - `my.apps.geekbench.enable`
 - `my.apps.iterm2.enable`
@@ -158,7 +161,7 @@ zsh -ic 'alias cat; alias batch; command -v python3 pip3 node npm go cargo rustc
 To compare app inheritance:
 
 ```sh
-for host in deathbox-air deathbox-mini work-macbook; do
+for host in deathbox-air deathbox-mini shbam-work work-macbook; do
   echo "== $host"
   nix eval --json ".#darwinConfigurations.${host}.config.homebrew.casks" \
     | jq -r '.[] | if type == "string" then . else .name end'

@@ -12,6 +12,7 @@
   ];
 
   my.apps = {
+    codexbar.enable = lib.mkDefault true;
     discord.enable = lib.mkDefault true;
     geekbench.enable = lib.mkDefault true;
     iterm2.enable = lib.mkDefault true;

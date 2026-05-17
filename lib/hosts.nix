@@ -140,6 +140,14 @@ let
       homeModule = ../hosts/darwin/deathbox-mini/home.nix;
     };
 
+    shbam-work = {
+      hostname = "shbam-work";
+      system = "aarch64-darwin";
+      username = defaultUsername;
+      modules = [ ../hosts/darwin/shbam-work ];
+      homeModule = ../hosts/darwin/shbam-work/home.nix;
+    };
+
     work-macbook = {
       hostname = "work-macbook";
       system = "aarch64-darwin";
