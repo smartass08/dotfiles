@@ -19,6 +19,7 @@ in
       fd
       fastfetch
       fzf
+      gh
       git
       jq
       nano
