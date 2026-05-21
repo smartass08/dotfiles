@@ -21,6 +21,7 @@ personal config rather than hand-written reference material.
 - `flake-parts` wires outputs.
 - `nix-darwin` manages macOS system state.
 - Home Manager owns user shell, CLI tools, language toolchains, aliases, and dotfiles.
+- Fast-moving AI agent CLIs come from [numtide/llm-agents.nix](https://github.com/numtide/llm-agents.nix) and its binary cache.
 - Homebrew casks are used for macOS GUI apps to avoid slow local builds and App Management friction.
 - Host-specific removals are handled through feature flags, not list surgery.
 

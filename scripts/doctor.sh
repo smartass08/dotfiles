@@ -14,7 +14,7 @@ defaults read NSGlobalDomain InitialKeyRepeat 2>/dev/null | sed 's/^/InitialKeyR
 defaults read NSGlobalDomain KeyRepeat 2>/dev/null | sed 's/^/KeyRepeat: /'
 test -w "${HOME}/.p10k.zsh" && echo "p10k: writable"
 
-for command_name in aria2c bat cargo claude git go jq nh node nom npm npx pip pip3 python python3 rclone rg rust-analyzer rustc rustfmt ssh virtualenv zsh; do
+for command_name in aria2c bat cargo claude codex git go jq nh node nom npm npx opencode pip pip3 python python3 rclone rg rust-analyzer rustc rustfmt ssh virtualenv zsh; do
   command -v "${command_name}"
 done
 

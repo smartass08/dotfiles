@@ -1,11 +1,13 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
 }:
 let
   toolsets = config.my.toolsets;
+  llmAgents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
 in
 {
   home.packages =
@@ -33,9 +35,9 @@ in
     ]
     ++ lib.optionals toolsets.dev.enable [
       cargo
-      claude-code
-      opencode
-      codex
+      llmAgents.claude-code
+      llmAgents.opencode
+      llmAgents.codex
       go
       nodejs_latest
       python3
