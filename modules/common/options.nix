@@ -3,6 +3,7 @@
   options.my = {
     apps = {
       codexbar.enable = lib.mkEnableOption "CodexBar";
+      engram.enable = lib.mkEnableOption "engram";
       discord.enable = lib.mkEnableOption "Discord";
       geekbench.enable = lib.mkEnableOption "Geekbench";
       iterm2.enable = lib.mkEnableOption "iTerm2";

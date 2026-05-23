@@ -3,7 +3,9 @@ let
   apps = config.my.apps;
 in
 {
-  homebrew.taps = lib.optionals apps.codexbar.enable [ "steipete/tap" ];
+  homebrew.taps = 
+    lib.optionals apps.codexbar.enable [ "steipete/tap" ]
+    ++ lib.optionals apps.engram.enable [ "gentleman-programming/tap" ];
 
   homebrew.casks =
     lib.optionals apps.codexbar.enable [ "steipete/tap/codexbar" ]
@@ -16,5 +18,6 @@ in
     ++ lib.optionals apps.telegram.enable [ "telegram" ]
     ++ lib.optionals apps.whatsapp.enable [ "whatsapp" ]
     ++ lib.optionals apps.vscode.enable [ "visual-studio-code" ]
+    ++ lib.optionals apps.engram.enable [ "gentleman-programming/tap/engram" ]
     ++ lib.optionals apps.zed.enable [ "zed" ];
 }
