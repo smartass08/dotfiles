@@ -11,6 +11,8 @@
     ../zsh.nix
   ];
 
+  services.openssh.enable = true;
+
   my.apps = {
     claude.enable = lib.mkDefault true;
     codexbar.enable = lib.mkDefault true;
