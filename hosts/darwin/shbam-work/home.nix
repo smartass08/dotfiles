@@ -3,6 +3,7 @@
   imports = [
     ../../../home/users/smartass08
     ../../../home/darwin
+    ./git-personal.nix
   ];
 
   home.homeDirectory = "/Users/${username}";
