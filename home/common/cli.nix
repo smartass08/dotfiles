@@ -81,6 +81,11 @@ in
     nix-direnv.enable = true;
   };
 
+  xdg.configFile."direnv/direnv.toml".text = ''
+    [global]
+    hide_env_diff = true
+  '';
+
   programs.fzf = {
     enable = true;
     enableZshIntegration = false;
