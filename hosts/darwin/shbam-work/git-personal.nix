@@ -13,6 +13,7 @@ in
 {
   home.file.".local/bin/git-personal-ssh" = {
     executable = true;
+    force = true;
     text = ''
       #!${pkgs.zsh}/bin/zsh
       set -euo pipefail
