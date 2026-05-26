@@ -54,6 +54,8 @@ in
     ++ lib.optionals toolsets.network.enable [
       aria2
       openssh
+    ]
+    ++ lib.optionals (toolsets.network.enable && !pkgs.stdenv.hostPlatform.isDarwin) [
       rclone
     ];
 

@@ -38,5 +38,6 @@
     mysql80.enable = lib.mkDefault false;
     nvm.enable = lib.mkDefault false;
     postgresql17.enable = lib.mkDefault false;
+    rclone.enable = lib.mkDefault true;
   };
 }

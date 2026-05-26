@@ -35,6 +35,7 @@
       mysql80.enable = lib.mkEnableOption "MySQL 8.0";
       nvm.enable = lib.mkEnableOption "nvm";
       postgresql17.enable = lib.mkEnableOption "PostgreSQL 17";
+      rclone.enable = lib.mkEnableOption "rclone";
     };
   };
 }

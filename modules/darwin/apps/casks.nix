@@ -14,7 +14,8 @@ in
     ++ lib.optionals brews.docker-compose.enable [ "docker-compose" ]
     ++ lib.optionals brews.mysql80.enable [ "mysql@8.0" ]
     ++ lib.optionals brews.nvm.enable [ "nvm" ]
-    ++ lib.optionals brews.postgresql17.enable [ "postgresql@17" ];
+    ++ lib.optionals brews.postgresql17.enable [ "postgresql@17" ]
+    ++ lib.optionals brews.rclone.enable [ "rclone" ];
 
   homebrew.casks =
     lib.optionals apps.claude.enable [ "claude" ]
