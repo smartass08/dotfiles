@@ -5,6 +5,7 @@
   ];
 
   home = {
+    enableNixpkgsReleaseCheck = false;
     inherit username;
     stateVersion = "25.11";
   };
