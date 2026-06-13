@@ -2,7 +2,9 @@
 {
   options.my = {
     apps = {
+      amphetamine.enable = lib.mkEnableOption "Amphetamine";
       claude.enable = lib.mkEnableOption "Claude Desktop";
+      codex.enable = lib.mkEnableOption "Codex Desktop";
       codexbar.enable = lib.mkEnableOption "CodexBar";
       cursor.enable = lib.mkEnableOption "Cursor";
       engram.enable = lib.mkEnableOption "engram";
@@ -27,6 +29,10 @@
       dev.enable = lib.mkEnableOption "developer language toolchains";
       diagnostics.enable = lib.mkEnableOption "diagnostic and benchmark tools";
       network.enable = lib.mkEnableOption "network and transfer tools";
+    };
+
+    pkgs = {
+      awscli2.enable = lib.mkEnableOption "AWS CLI v2";
     };
 
     brews = {

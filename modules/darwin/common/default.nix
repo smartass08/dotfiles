@@ -14,7 +14,9 @@
   services.openssh.enable = true;
 
   my.apps = {
+    amphetamine.enable = lib.mkDefault true;
     claude.enable = lib.mkDefault true;
+    codex.enable = lib.mkDefault true;
     codexbar.enable = lib.mkDefault true;
     cursor.enable = lib.mkDefault false;
     engram.enable = lib.mkDefault true;

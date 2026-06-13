@@ -6,6 +6,7 @@
   ...
 }:
 let
+  packages = config.my.pkgs;
   toolsets = config.my.toolsets;
   llmAgents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
 in
@@ -54,6 +55,9 @@ in
     ++ lib.optionals toolsets.network.enable [
       aria2
       openssh
+    ]
+    ++ lib.optionals packages.awscli2.enable [
+      awscli2
     ]
     ++ lib.optionals (toolsets.network.enable && !pkgs.stdenv.hostPlatform.isDarwin) [
       rclone

@@ -12,4 +12,8 @@
     diagnostics.enable = lib.mkDefault true;
     network.enable = lib.mkDefault true;
   };
+
+  my.pkgs = {
+    awscli2.enable = lib.mkDefault false;
+  };
 }

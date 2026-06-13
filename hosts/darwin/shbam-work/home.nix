@@ -13,6 +13,10 @@
     "/opt/homebrew/opt/postgresql@17/bin"
   ];
 
+  my.pkgs = {
+    awscli2.enable = true;
+  };
+
   xdg.configFile."docker/config.json".text = builtins.toJSON {
     cliPluginsExtraDirs = [
       "/opt/homebrew/lib/docker/cli-plugins"

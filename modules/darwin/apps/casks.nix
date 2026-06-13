@@ -19,6 +19,7 @@ in
 
   homebrew.casks =
     lib.optionals apps.claude.enable [ "claude" ]
+    ++ lib.optionals apps.codex.enable [ "codex-app" ]
     ++ lib.optionals apps.codexbar.enable [ "steipete/tap/codexbar" ]
     ++ lib.optionals apps.cursor.enable [ "cursor" ]
     ++ lib.optionals apps.discord.enable [ "discord" ]
@@ -36,4 +37,8 @@ in
     ++ lib.optionals apps.vscode.enable [ "visual-studio-code" ]
     ++ lib.optionals apps.engram.enable [ "gentleman-programming/tap/engram" ]
     ++ lib.optionals apps.zed.enable [ "zed" ];
+
+  homebrew.masApps = lib.optionalAttrs apps.amphetamine.enable {
+    Amphetamine = 937984704;
+  };
 }
