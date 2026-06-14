@@ -109,8 +109,10 @@ Current Darwin app flags:
 
 - `my.apps.codexbar.enable`
 - `my.apps.discord.enable`
+- `my.apps.focusrite.enable`
 - `my.apps.geekbench.enable`
 - `my.apps.iterm2.enable`
+- `my.apps.krisp.enable`
 - `my.apps.nvidia-geforce-now.enable`
 - `my.apps.outlook.enable`
 - `my.apps.spotify.enable`

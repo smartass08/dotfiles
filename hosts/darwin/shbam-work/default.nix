@@ -4,6 +4,8 @@
     cursor.enable = true;
     discord.enable = true;
     firefox.enable = true;
+    focusrite.enable = true;
+    krisp.enable = true;
     nvidia-geforce-now.enable = false;
     orbstack.enable = true;
     slack.enable = true;

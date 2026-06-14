@@ -22,8 +22,10 @@
     engram.enable = lib.mkDefault true;
     discord.enable = lib.mkDefault true;
     firefox.enable = lib.mkDefault false;
+    focusrite.enable = lib.mkDefault false;
     geekbench.enable = lib.mkDefault true;
     iterm2.enable = lib.mkDefault true;
+    krisp.enable = lib.mkDefault false;
     mos.enable = lib.mkDefault true;
     nvidia-geforce-now.enable = lib.mkDefault true;
     orbstack.enable = lib.mkDefault false;

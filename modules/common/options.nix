@@ -11,7 +11,9 @@
       discord.enable = lib.mkEnableOption "Discord";
       geekbench.enable = lib.mkEnableOption "Geekbench";
       firefox.enable = lib.mkEnableOption "Firefox";
+      focusrite.enable = lib.mkEnableOption "Focusrite Control 2";
       iterm2.enable = lib.mkEnableOption "iTerm2";
+      krisp.enable = lib.mkEnableOption "Krisp";
       mos.enable = lib.mkEnableOption "Mos";
       nvidia-geforce-now.enable = lib.mkEnableOption "NVIDIA GeForce NOW";
       orbstack.enable = lib.mkEnableOption "OrbStack";
