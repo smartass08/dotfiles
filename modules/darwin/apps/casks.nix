@@ -27,6 +27,7 @@ in
     ++ lib.optionals apps.focusrite.enable [ "focusrite-control-2" ]
     ++ lib.optionals apps.geekbench.enable [ "geekbench" ]
     ++ lib.optionals apps.iterm2.enable [ "iterm2" ]
+    ++ lib.optionals apps.jetbrains-toolbox.enable [ "jetbrains-toolbox" ]
     ++ lib.optionals apps.krisp.enable [ "krisp" ]
     ++ lib.optionals apps.mos.enable [ "mos" ]
     ++ lib.optionals apps.nvidia-geforce-now.enable [ "nvidia-geforce-now" ]
