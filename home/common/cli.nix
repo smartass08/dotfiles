@@ -54,6 +54,7 @@ in
     ]
     ++ lib.optionals toolsets.network.enable [
       aria2
+      cloudflared
       openssh
     ]
     ++ lib.optionals packages.awscli2.enable [

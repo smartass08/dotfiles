@@ -3,6 +3,7 @@
   imports = [
     ../../modules/common/options.nix
     ./cli.nix
+    ./ssh.nix
     ./zsh.nix
   ];
 
