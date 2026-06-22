@@ -109,6 +109,7 @@ Current Darwin app flags:
 
 - `my.apps.codexbar.enable`
 - `my.apps.discord.enable`
+- `my.apps.epson-v39ii-driver.enable`
 - `my.apps.focusrite.enable`
 - `my.apps.geekbench.enable`
 - `my.apps.iterm2.enable`
@@ -121,6 +122,9 @@ Current Darwin app flags:
 - `my.apps.whatsapp.enable`
 - `my.apps.vscode.enable`
 - `my.apps.zed.enable`
+
+When `my.apps.epson-v39ii-driver.enable` is enabled, the system provides
+`install-epson-v39ii-driver` and `uninstall-epson-v39ii-driver` helper commands.
 
 Current Home Manager toolset flags:
 

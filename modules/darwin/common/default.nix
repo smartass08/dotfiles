@@ -4,6 +4,7 @@
     ../../common/options.nix
     ../apps/amphetamine-power-protect.nix
     ../apps/casks.nix
+    ../apps/epson-v39ii-driver.nix
     ../defaults.nix
     ../environment.nix
     ../fonts.nix
@@ -22,6 +23,7 @@
     cursor.enable = lib.mkDefault false;
     engram.enable = lib.mkDefault true;
     discord.enable = lib.mkDefault true;
+    epson-v39ii-driver.enable = lib.mkDefault false;
     firefox.enable = lib.mkDefault false;
     focusrite.enable = lib.mkDefault false;
     geekbench.enable = lib.mkDefault true;

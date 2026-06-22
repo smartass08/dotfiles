@@ -6,4 +6,8 @@
   ];
 
   home.homeDirectory = "/Users/${username}";
+
+  home.sessionPath = [
+    "/opt/homebrew/opt/postgresql@17/bin"
+  ];
 }

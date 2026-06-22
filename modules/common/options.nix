@@ -9,6 +9,7 @@
       cursor.enable = lib.mkEnableOption "Cursor";
       engram.enable = lib.mkEnableOption "engram";
       discord.enable = lib.mkEnableOption "Discord";
+      epson-v39ii-driver.enable = lib.mkEnableOption "Epson Perfection V39 II driver and utilities installer";
       geekbench.enable = lib.mkEnableOption "Geekbench";
       firefox.enable = lib.mkEnableOption "Firefox";
       focusrite.enable = lib.mkEnableOption "Focusrite Control 2";

@@ -3,6 +3,7 @@
   my.apps = {
     cursor.enable = true;
     discord.enable = true;
+    epson-v39ii-driver.enable = true;
     firefox.enable = true;
     focusrite.enable = true;
     krisp.enable = true;
