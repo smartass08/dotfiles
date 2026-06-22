@@ -2,6 +2,7 @@
 {
   imports = [
     ../../common/options.nix
+    ../apps/amphetamine-power-protect.nix
     ../apps/casks.nix
     ../defaults.nix
     ../environment.nix
