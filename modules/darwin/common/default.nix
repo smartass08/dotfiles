@@ -27,6 +27,7 @@
     firefox.enable = lib.mkDefault false;
     focusrite.enable = lib.mkDefault false;
     geekbench.enable = lib.mkDefault true;
+    iina.enable = lib.mkDefault true;
     iterm2.enable = lib.mkDefault true;
     jetbrains-toolbox.enable = lib.mkDefault true;
     krisp.enable = lib.mkDefault false;

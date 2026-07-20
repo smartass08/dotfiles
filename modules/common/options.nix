@@ -13,6 +13,7 @@
       geekbench.enable = lib.mkEnableOption "Geekbench";
       firefox.enable = lib.mkEnableOption "Firefox";
       focusrite.enable = lib.mkEnableOption "Focusrite Control 2";
+      iina.enable = lib.mkEnableOption "IINA";
       iterm2.enable = lib.mkEnableOption "iTerm2";
       jetbrains-toolbox.enable = lib.mkEnableOption "JetBrains Toolbox";
       krisp.enable = lib.mkEnableOption "Krisp";

@@ -26,6 +26,7 @@ in
     ++ lib.optionals apps.firefox.enable [ "firefox" ]
     ++ lib.optionals apps.focusrite.enable [ "focusrite-control-2" ]
     ++ lib.optionals apps.geekbench.enable [ "geekbench" ]
+    ++ lib.optionals apps.iina.enable [ "iina" ]
     ++ lib.optionals apps.iterm2.enable [ "iterm2" ]
     ++ lib.optionals apps.jetbrains-toolbox.enable [ "jetbrains-toolbox" ]
     ++ lib.optionals apps.krisp.enable [ "krisp" ]
