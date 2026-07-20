@@ -41,7 +41,7 @@ in
       llmAgents.opencode
       llmAgents.codex
       go
-      nodejs_latest
+      nodejs
       python3
       python3Packages.pip
       python3Packages.virtualenv
