@@ -29,6 +29,7 @@ in
     ++ lib.optionals apps.iina.enable [ "iina" ]
     ++ lib.optionals apps.iterm2.enable [ "iterm2" ]
     ++ lib.optionals apps.jetbrains-toolbox.enable [ "jetbrains-toolbox" ]
+    ++ lib.optionals apps.kimi.enable [ "kimi" ]
     ++ lib.optionals apps.krisp.enable [ "krisp" ]
     ++ lib.optionals apps.mos.enable [ "mos" ]
     ++ lib.optionals apps.nvidia-geforce-now.enable [ "nvidia-geforce-now" ]

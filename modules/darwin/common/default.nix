@@ -30,6 +30,7 @@
     iina.enable = lib.mkDefault true;
     iterm2.enable = lib.mkDefault true;
     jetbrains-toolbox.enable = lib.mkDefault true;
+    kimi.enable = lib.mkDefault true;
     krisp.enable = lib.mkDefault false;
     mos.enable = lib.mkDefault true;
     nvidia-geforce-now.enable = lib.mkDefault true;

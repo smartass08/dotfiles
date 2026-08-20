@@ -16,6 +16,7 @@
       iina.enable = lib.mkEnableOption "IINA";
       iterm2.enable = lib.mkEnableOption "iTerm2";
       jetbrains-toolbox.enable = lib.mkEnableOption "JetBrains Toolbox";
+      kimi.enable = lib.mkEnableOption "Kimi";
       krisp.enable = lib.mkEnableOption "Krisp";
       mos.enable = lib.mkEnableOption "Mos";
       nvidia-geforce-now.enable = lib.mkEnableOption "NVIDIA GeForce NOW";
