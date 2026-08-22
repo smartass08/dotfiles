@@ -155,6 +155,17 @@ let
       modules = [ ../hosts/darwin/work-macbook ];
       homeModule = ../hosts/darwin/work-macbook/home.nix;
     };
+
+    # MDM-managed Mercor laptop. The attribute name must stay byte-identical to
+    # `hostname -s` so scripts/lib.sh resolves it without NIX_SETUP_HOST, and
+    # because the hostname itself cannot be changed on that machine.
+    "Shubhams-MacBook-Pro" = {
+      hostname = "Shubhams-MacBook-Pro";
+      system = "aarch64-darwin";
+      username = "shubhamdubey";
+      modules = [ ../hosts/darwin/Shubhams-MacBook-Pro ];
+      homeModule = ../hosts/darwin/Shubhams-MacBook-Pro/home.nix;
+    };
   };
 
   nixosHosts = { };

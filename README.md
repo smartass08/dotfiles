@@ -33,6 +33,7 @@ Darwin hosts are declared in [lib/hosts.nix](./lib/hosts.nix):
 - `deathbox-mini`: personal Mac mini; inherits common Darwin apps
 - `shbam-work`: work MacBook; inherits common Darwin apps but disables social apps
 - `work-macbook`: work MacBook; inherits common Darwin apps but disables Telegram
+- `Shubhams-MacBook-Pro`: MDM-managed Mercor MacBook; no social apps, no hostname management, Mercor/Deeptune git identities
 
 NixOS support is scaffolded with `mkNixosHost` and
 [modules/nixos/common](./modules/nixos/common), but no Linux host is enabled yet.
@@ -78,6 +79,7 @@ Scripts default to `hostname -s`. Override when checking another host:
 NIX_SETUP_HOST=deathbox-mini ./scripts/check.sh
 NIX_SETUP_HOST=shbam-work ./scripts/check.sh
 NIX_SETUP_HOST=work-macbook ./scripts/check.sh
+NIX_SETUP_HOST=Shubhams-MacBook-Pro ./scripts/check.sh
 ```
 
 ## Managed Pieces
@@ -169,7 +171,7 @@ zsh -ic 'alias cat; alias batch; command -v python3 pip3 node npm go cargo rustc
 To compare app inheritance:
 
 ```sh
-for host in deathbox-air deathbox-mini shbam-work work-macbook; do
+for host in deathbox-air deathbox-mini shbam-work work-macbook Shubhams-MacBook-Pro; do
   echo "== $host"
   nix eval --json ".#darwinConfigurations.${host}.config.homebrew.casks" \
     | jq -r '.[] | if type == "string" then . else .name end'
